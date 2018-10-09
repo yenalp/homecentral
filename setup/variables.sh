@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+PROJECT_NAME="homecentral"
+PROJECT_HUMAN_NAME="homecentral"
+HTTP_PORT="8084"
+HTTPS_PORT="8084"
+FRAMEWORK="laravel"
+CMS_SPECIFIC_BOOTSTRAP="laravel"
+BASE_PATH="/vagrant/www"
+WEBROOT="/vagrant/www/public"
+FILES_DIR="/vagrant/www/public"
+DB_NAME="home_central"
+DB_ROOT_PASS="fochfoch"
+DB_USER="home_user"
+DB_HOST="localhost"
+DB_PASS="fochfoch"
+DB_DUMP_DIR="/vagrant"
+SITE_LOCALE="au"
+ADMIN_EMAIL=""
+ADMIN_USERNAME=""
+ADMIN_PASS=""
+MOUNT_FILES_BUBBLES="true"
+INSTALL_FRAMEWORK="true"
+
+# new 'sites' variable for Drupal installs - space-separated sites, default value "default"
+# for other frameworks, this will be an empty string - need to iterate over ""$SITES in scripts to ensure it's run once
+SITES="false"
