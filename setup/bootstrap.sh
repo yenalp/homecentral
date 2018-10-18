@@ -48,8 +48,8 @@ import.require "provision.php72"
 import.useModule "provision.php72"
 
 # ======= Database Type and Version =======
-import.require "provision.mariadb102"
-import.useModule "provision.mariadb102" "$DB_NAME"
+import.require "provision.mariadb103"
+import.useModule "provision.mariadb103" "$DB_NAME"
 
 # Setup composer
 import.require 'provision.composer'

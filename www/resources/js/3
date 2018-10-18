@@ -12,7 +12,7 @@ window.Vue = require('vue');
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';
-//import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
 //const FCComponent = require('vue-fusioncharts').FCComponent;
 
@@ -20,7 +20,7 @@ Vue.use(VueFusionCharts, FusionCharts, Charts);
 
 //Vue.component('fusioncharts', FCComponent);
 
-//Charts(FusionCharts);
+Charts(FusionCharts);
 
 
 /**
