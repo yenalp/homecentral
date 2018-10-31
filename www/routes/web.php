@@ -11,12 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Models\WaterPressure;;
+use App\Http\Resources\WaterPressureCollection;
+
+
+Auth::routes(['register' => false]);
+
+Route::get('/water-pressure', function () {
+    return new WaterPressureCollection(WaterPressure::latest('created_at')->first());
 });
 
-Route::get('/fusioncharts', 'FusionCharts@home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@react');
+//
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Route::get('/fusioncharts', 'FusionCharts@home');
+//
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/react', 'HomeController@react')->name('react');

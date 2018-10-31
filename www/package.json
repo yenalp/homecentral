@@ -10,14 +10,16 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.18",
+        "axios": "^0.18.0",
+        "babel-preset-react": "^6.23.0",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
-        "vue": "^2.5.7"
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0"
     },
     "dependencies": {
         "ajv": "^6.5.4",
@@ -25,6 +27,7 @@
         "fusioncharts": "^3.13.2",
         "imagemin": "^5.3.1",
         "img-loader": "^3.0.0",
+        "react-fusioncharts": "^2.0.5",
         "vue-fusioncharts": "^2.0.1"
     }
 }
