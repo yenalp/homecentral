@@ -11,8 +11,10 @@
 |
 */
 
-use App\Models\WaterPressure;;
+use App\Models\WaterPressure;
+use App\Models\OutsideTemperature;
 use App\Http\Resources\WaterPressureCollection;
+use App\Http\Resources\OutsideTemperatureCollection;
 
 
 Auth::routes(['register' => false]);
@@ -20,6 +22,12 @@ Auth::routes(['register' => false]);
 Route::get('/water-pressure', function () {
     return new WaterPressureCollection(WaterPressure::latest('created_at')->first());
 });
+
+
+Route::get('/outside-temperature', function () {
+    return new OutsideTemperatureCollection(OutsideTemperature::latest('created_at')->first());
+});
+
 
 Route::get('/', 'HomeController@react');
 //

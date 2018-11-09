@@ -63,25 +63,25 @@ const eventsCylinder = {
         var gaugeRef = evtObj.sender;
         gaugeRef.chartInterval = setInterval(function() {
 	    // Get the water pressure from the server
-	    axios.get('https://192.168.2.153:8085/water-pressure')
+	    axios.get('https://localhost:8085/water-pressure')
     		.then(response => {
-            		var fuelVolume = response.data.percent;
-            		var consVolume = response.data.percent;
-			gaugeRef.feedData("&value=" + consVolume);
-            		fuelVolume = consVolume;
-		});
+    		    var fuelVolume = response.data.percent;
+    		    var consVolume = response.data.percent;
+			    gaugeRef.feedData("&value=" + consVolume);
+			    fuelVolume = consVolume;
+		    });
         }, 3000);
     },
     //Using real time update event to update the annotation
     //showing available volume of Diesel
     "realTimeUpdateComplete": function(evt, arg) {
-	    var annotations = evt.sender.annotations,
+	    let annotations = evt.sender.annotations,
             dataVal = evt.sender.getData(),
             colorVal = (dataVal >= 70) ? "#6caa03" : ((dataVal <= 25) ? "#e44b02" : "#f8bd1b");
-        //Updating value
-        annotations && annotations.update('rangeText', {
-            "text": "Total: " + Math.floor(dataVal) + "%"
-        });
+            //Updating value
+            annotations && annotations.update('rangeText', {
+                "text": "Total: " + Math.floor(dataVal) + "%"
+            });
     },
     "disposed": function(evt, arg) {
         clearInterval(evt.sender.chartInterval);
@@ -93,18 +93,18 @@ const eventsCylinder = {
 class WaterLevelCylinder extends React.Component {
   render() {
      return (
-     <ReactFC
-	 type = "cylinder"
-         width = '100%'
-         height = '500'
-         dataFormat = "json"
-         dataSource = {dataSourceCylinder} 
-	 events =  {eventsCylinder}/>
+        <ReactFC
+	        type = "cylinder"
+            width = '100%'
+            height = '500'
+            dataFormat = "json"
+            dataSource = {dataSourceCylinder}
+            events =  {eventsCylinder}/>
      );
   }
 }
 export default WaterLevelCylinder
 
 if (document.getElementById('water-level-cylinder')) {
-    ReactDOM.render(<WaterLevelCylinder/>, document.getElementById('water-level-cylinder'));
+    //ReactDOM.render(<WaterLevelCylinder/>, document.getElementById('water-level-cylinder'));
 }

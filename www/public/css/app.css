@@ -10468,11 +10468,49 @@ a.text-dark:focus {
 
 body {
   background-color: #262a33;
+  color: #fff;
 }
 
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.timer {
+  height: 1%;
+  width: 0%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.slideshow {
+  position: relative;
+  height: 100%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 550px;
+}
+
+.slide {
+  display: none;
 }
 

@@ -16,10 +16,10 @@ class CreateOutdoorTemperatures extends Migration
         //
         Schema::create('outdoor_temperatures', function (Blueprint $table) {
             $table->increments('id');
-	    $table->string('temperature');
-	    $table->timestamps();
+            $table->string('temperature');
+            $table->timestamps();
 
-	    $table->index('temperature');
+            $table->index('temperature');
         });
     }
 
