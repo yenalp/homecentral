@@ -14,5 +14,5 @@ require('./bootstrap');
  */
 
 // require('./components/Example');
-require('./components/OutsideTemperature');
+// require('./components/OutsideTemperature');
 require('./components/Dashboard');
